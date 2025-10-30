@@ -21,17 +21,20 @@ const MyButton = ({label, whenPressed}) =>{
 
 const mystyles = StyleSheet.create({
     container:{
-        backgroundColor: '#626d25ff',
-        width: width*.84,
-        paddingVertical: 15,
-        borderRadius: 10
+        backgroundColor: '#367E34',
+        width: 330,
+        height: 48,
+        paddingVertical: 14,
+        marginHorizontal: 16,
+        borderRadius: 8
 
     },
 
     textStyle:{
         textAlign: 'center',
-        fontSize: 17,
-        color: '#ffffff'
+        fontSize: 14,
+        fontWeight: 400,
+        color: '#f9fafb'
 
     }
 })

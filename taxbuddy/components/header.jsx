@@ -34,7 +34,7 @@ const mystyles = StyleSheet.create({
 
   style1:{
     paddingHorizontal: 15,
-    marginBottom: 15,
+    marginBottom: 15, 
   },
 
   style1Sub:{
