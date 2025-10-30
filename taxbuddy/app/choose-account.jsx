@@ -14,7 +14,7 @@ const ChooseAccount = () =>{
             <Text style={mystyles.style1} >Choose Your Account Type</Text>
             <Text style={mystyles.style2}>Select whether you're managing personl taxes or tracking your business finances.</Text>
 
-            <TouchableOpacity style={mystyles.style3}>
+            <TouchableOpacity style={mystyles.style3} onPress={()=>{router.push('sign-in')}} >
                         <Image style={mystyles.style4} source={require('../assets/images/frame4.png')} />
                         <Text style={mystyles.style5} >Individual</Text>
                         <Text style={mystyles.style6}>Track personal income tax and stay compliant with FIRS regulations</Text>

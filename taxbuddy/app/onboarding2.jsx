@@ -16,7 +16,7 @@ const Onboarding2 = () =>{
             <View style={mystyles.headerStyle}>
 
                 <Image style={mystyles.frame1Style} source={require('../assets/images/frame-2.png')} />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{router.push('choose-account')}}>
                     <Text style={mystyles.skipStyle} >Skip</Text>
                 </TouchableOpacity>
             </View>
