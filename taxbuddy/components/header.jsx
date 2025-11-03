@@ -33,25 +33,34 @@ const MyHeader = ({whenPressed}) =>{
 const mystyles = StyleSheet.create({
 
   style1:{
-    paddingHorizontal: 15,
-    marginBottom: 15, 
+    width: 370,
+    height: 70,
+    left: 16,
+    gap: 16
   },
 
   style1Sub:{
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    //marginBottom: 16,
+    width: 370,
+    height: 30,
+    gap: 24,
+
 
   },
 
   sub1Text:{
     fontSize: 24,
-    marginLeft: 20
+    marginLeft: 24,
+    fontWeight: 500,
+    lineHeight: 30,
+    letterSpacing: -0.15,
   },
 
   style1Text:{
     fontSize: 17,
-    color: '#7c7777ff'
+    color: '#4a5565'
   },
 
 })

@@ -13,7 +13,7 @@ const HistoryBoby = ({whenPressed, value1, value2, value3, value4, myMonth, myYe
 
   const arrowLeftIcon = <Feather name="arrow-left" size={24} color={'#000'} />
   const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#ffffff'} />
-  const nairaIcon = <FontAwesome6 name="naira-sign" size={20} color={'#8e67e9ff'} />
+  const nairaIcon = <FontAwesome6 name="naira-sign" size={20} color={'#0000ff'} letterSpacing={-.2} />
 
 
 
@@ -88,79 +88,100 @@ const mystyles = StyleSheet.create({
 
   container:{
     //marginVertical: 10
+
   },
 
   style2:{
     backgroundColor: "#ffffff",
     marginVertical: 20,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderRadius: 15,
+    borderRadius: 20,
+    //width: 370,
+    height: 110,
+    padding: 16,
+    gap: 16
   },
 
   style2Text1:{
-    fontSize: 17,
-    color: '#7c7777ff',
-    marginBottom: 15,
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#212121 75%',
+    gap: 16
   },
 
   style2Text2:{
-    fontSize: 28,
-    fontWeight: 'bold',
+    fontSize: 32,
+    fontWeight: 500,
+    lineHeight: 38,
+    letterSpacing: -.2,
+    color: '#212121 75%',
+
   },
 
   style3:{
-    backgroundColor: "#e4dfdfff",
+    backgroundColor: "#d4e8d3",
     marginVertical: 20,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderRadius: 15,
+    borderRadius: 20,
+    //width: 370,
+    height: 110,
+    padding: 16,
+    gap: 16
   },
 
   style3Text1:{
-    fontSize: 17,
-    color: '#7c7c77ff',
-    marginBottom: 15,
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#212121 75%',
+    gap: 16
   },
 
   style3Text2:{
-    fontSize: 28,
-    color: '#c0760dff',
-    fontWeight: 'bold',
+    fontSize: 32,
+    fontWeight: 500,
+    lineHeight: 38,
+    letterSpacing: -.2,
+    color: '#367e34',
   },
 
   style4:{
-    backgroundColor: "#ccc",
+    backgroundColor: "#ffcccc",
     marginVertical: 20,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderRadius: 15,
+    borderRadius: 20,
+    //width: 370,
+    height: 110,
+    padding: 16,
+    gap: 16
   },
 
   style4Text1:{
-    fontSize: 17,
-    color: '#7c7c77ff',
-    marginBottom: 15,
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#a45565',
+    gap: 16
   },
 
   style4Text2:{
-    fontSize: 28,
-    color: '#86540dff',
-    fontWeight: 'bold',
+    fontSize: 32,
+    fontWeight: 500,
+    lineHeight: 38,
+    letterSpacing: -.2,
+    color: '#ff0000',
   },
 
   style5:{
-    backgroundColor: "#e2ddf7ff",
+    backgroundColor: "#e6e6ff",
     marginVertical: 20,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderRadius: 15,
+    borderRadius: 20,
+    //width: 370,
+    height: 110,
+    padding: 16,
+    gap: 16
   },
 
   style5Text1:{
-    fontSize: 17,
-    color: '#79777cff',
-    marginBottom: 15,
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#212121 75%',
+    gap: 16
   },
 
   style5Sub:{
@@ -169,14 +190,16 @@ const mystyles = StyleSheet.create({
   },
 
   style5Text2:{
-    fontSize: 28,
-    color: '#8e67e9ff',
-    fontWeight: 'bold',
+    fontSize: 32,
+    fontWeight: 500,
+    lineHeight: 38,
+    letterSpacing: -.2,
+    color: '#0000ff',
   },
 
   style6:{
-    backgroundColor: '#c97808ff',
-    marginVertical: 5,
+    backgroundColor: '#f76d1b',
+    marginVertical: 8,
     borderRadius: 10,
     paddingVertical: 10,
   },
@@ -189,7 +212,7 @@ const mystyles = StyleSheet.create({
 
   style6Text:{
     fontSize: 14,
-    color: '#ffffff',
+    color: '#f9fafb',
     paddingRight: 5,
 
   }

@@ -24,21 +24,24 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 
 
-export default function Index() {
+const historyUnpaid = () =>{
 
 
 
 
   const arrowLeftIcon = <Feather name="arrow-left" size={24} color={'#000'} />
-  const calendarIcon = <SimpleLineIcons name="calendar" size={55} color={'#692e3dff'} />
 
   const homeIcon = <Ionicons name="home-outline" size={24} color={'#948e8eff'} /> 
   const calculatorIcon = <Ionicons name="calculator-outline" size={24} color={'#948e8eff'} /> 
   const historyIcon = <MaterialIcons name="access-time-filled" size={24} color={'#999123ff'} />
   const historyIcon2 = <MaterialIcons name="access-time" size={24} color={'#948e8eff'} />
+
   const alertIcon = <Ionicons name="notifications-outline" size={24} color={'#948e8eff'} /> 
   const alertIcon2 = <Ionicons name="notifications-sharp" size={24} color={'#948e8eff'} />
   const profileIcon = <FontAwesome6 name="user-circle" size={24} color={'#948e8eff'} /> 
+  const nairaIcon = <FontAwesome6 name="naira-sign" size={12} color={'#1a1716'} letterSpacing={-.2} />
+  
+  const checkCircleIcon = <Ionicons name="checkmark-circle-outline" size={20} color={'#f9fafb'} />
 
 
 
@@ -46,10 +49,15 @@ export default function Index() {
 
 
 
-let total = 0;
+
+let total = 1;
 let paid = 0;
-let unPaid = 0;
+let unPaid = 1;
 let paidAmount = 0;
+
+let income = 500000;
+let taxAmount = 100000;
+let taxRate = 20.00;
 
 let month = 'Month';
 let year = 2025;
@@ -78,12 +86,54 @@ let year = 2025;
 
 
                     <View style={mystyles.style1} >
-                          {calendarIcon}
-                          <Text style={mystyles.style1Text}>Enter your income and tap calculate to view your tax breakdown</Text>
-                          
+
+                          <View style={mystyles.sub}>
+                                <Text style={mystyles.text1}>October 2025</Text>
+                                <Text style={mystyles.text2}>Unpaid</Text>
+                          </View>
+
+                          <View style={mystyles.sub2}>
+
+                                <View style={{gap: 8,}}>
+                                    <Text style={mystyles.text3}>Income</Text>
+                                    <View style={mystyles.sub3}>
+                                            {nairaIcon}
+                                            <Text style={mystyles.text3}>{income}</Text>
+                                    </View>
+                                </View>
+
+                                <View style={{gap: 8,}}>
+                                    <Text style={mystyles.text3}>Tax Amount</Text>
+                                    <View style={mystyles.sub4}>
+                                            {nairaIcon}
+                                            <Text style={mystyles.text3}>{taxAmount}</Text>
+                                    </View>
+                                </View>
+
+                                
+                                
+                          </View>
+
+
+                          <View style={{gap: 8, marginHorizontal: 16, marginVertical: 8}}>
+                                    <Text style={mystyles.text3}>Tax Rate</Text>
+                                    <View>
+                                            <Text style={mystyles.text3}>{taxRate}%</Text>
+                                    </View>
+                          </View>
+
+                          <View style={mystyles.sub2}>
+                            
+                                
+
+                                
+
+                          </View>
+
                           <MyButton2
-                                  whenPressed={() =>{router.push('history-unpaid')}} 
-                                  label={'Calculate Your First Tax'}
+                                  whenPressed={() =>{}} 
+                                  renderIcon icon={checkCircleIcon}
+                                  label={'Mark as Paid'}
                           />
                     </View>
 
@@ -125,19 +175,59 @@ const mystyles = StyleSheet.create({
     backgroundColor: '#ffffff',
     marginTop: 60,
     marginVertical: 10,
-    paddingVertical: 55,
+    paddingVertical: 15,
+    //paddingHorizontal: 16,
     borderRadius: 20,
-    alignItems: 'center',
     borderWidth: .8,
     borderColor: '#afa9a9ff',
 
   },
 
-  style1Text:{
-    textAlign: 'center',
-    fontSize: 18,
-    marginVertical: 25,
-    color: '#555454ff'
+  sub:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 45,
+    paddingHorizontal: 16,
+
+  },
+
+  text1:{
+    fontSize: 24,
+    fontWeight: 500,
+    letterSpacing: -.15,
+    lineHeight: 30,
+    color: '#212121'
+  },
+
+  text2:{
+    fontSize: 16,
+    lineHeight: 24, 
+    color: '#ff0000'
+  },
+
+  sub2:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    marginBottom: 16,
+  },
+
+  sub3:{
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  sub4:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-end'
+  },
+
+  text3:{
+    fontSize: 16,
+    color: '#1a1716',
   },
 
   footerStyle:{
@@ -151,3 +241,7 @@ const mystyles = StyleSheet.create({
 
 
 })
+
+
+
+export default historyUnpaid;

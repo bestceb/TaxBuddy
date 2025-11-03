@@ -21,7 +21,7 @@ const ChooseAccount = () =>{
             </TouchableOpacity>
 
 
-            <TouchableOpacity style={mystyles.style7}>
+            <TouchableOpacity style={mystyles.style7} onPress={()=>{router.push('history')}}>
                         <Image style={mystyles.style4} source={require('../assets/images/business-card.png')} />
                         <Text style={mystyles.style5} >Business</Text>
                         <Text style={mystyles.style6}>Manage company income tax and track business tax obligation</Text>
