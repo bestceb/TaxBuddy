@@ -4,7 +4,7 @@ import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-nati
 
 const {width, height} = Dimensions.get('screen');
 
-const MyButton = ({label, whenPressed, }) =>{
+const MyButton4 = ({label, whenPressed, renderIcon, icon}) =>{
 
 
     return(
@@ -12,7 +12,8 @@ const MyButton = ({label, whenPressed, }) =>{
         <View>
                 <TouchableOpacity style={mystyles.container} onPress={whenPressed} >
                                  <Text style={mystyles.textStyle} >{label}</Text>
-                                 
+                                {renderIcon ? icon : null}
+
                  </TouchableOpacity>
         </View>
         
@@ -22,12 +23,14 @@ const MyButton = ({label, whenPressed, }) =>{
 
 const mystyles = StyleSheet.create({
     container:{
-        backgroundColor: '#367E34',
-        width: 330,
+        backgroundColor: '#F76D1B',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+       // width: 300,
         height: 48,
         paddingVertical: 14,
         paddingHorizontal: 24,
-        marginHorizontal: 16,
         borderRadius: 8,
         gap: 10,
 
@@ -44,4 +47,4 @@ const mystyles = StyleSheet.create({
 
 
 
-export default MyButton;
+export default MyButton4;

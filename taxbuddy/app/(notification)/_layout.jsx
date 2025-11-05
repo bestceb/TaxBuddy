@@ -1,0 +1,13 @@
+import { Stack } from "expo-router";
+
+
+export default function NotificationLayout (){
+    return(
+        <Stack screenOptions={{headerShown: false}}>
+
+            <Stack.Screen name="notification"/>
+            <Stack.Screen name="notification2"/>
+
+        </Stack>
+    )
+}

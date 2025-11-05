@@ -31,6 +31,10 @@ if(showSplash){
           <Stack.Screen name="(auth)"/>
           <Stack.Screen name="history"/>
           <Stack.Screen name="history-unpaid"/>
+          <Stack.Screen name="history-mark-paid"/>
+          <Stack.Screen name="history-paid"/>
+          <Stack.Screen name="(notification)"/>
+          <Stack.Screen name="(profile-settings)"/>
           
 
     </Stack>

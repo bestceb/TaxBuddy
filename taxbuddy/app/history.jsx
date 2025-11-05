@@ -15,7 +15,7 @@ import Feather from '@expo/vector-icons/Feather';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
 
@@ -30,7 +30,7 @@ export default function Index() {
 
 
   const arrowLeftIcon = <Feather name="arrow-left" size={24} color={'#000'} />
-  const calendarIcon = <SimpleLineIcons name="calendar" size={55} color={'#692e3dff'} />
+  const calendarIcon = <SimpleLineIcons name="calendar" size={55} color={'#15010680'} />
 
   const homeIcon = <Ionicons name="home-outline" size={24} color={'#948e8eff'} /> 
   const calculatorIcon = <Ionicons name="calculator-outline" size={24} color={'#948e8eff'} /> 
@@ -38,7 +38,7 @@ export default function Index() {
   const historyIcon2 = <MaterialIcons name="access-time" size={24} color={'#948e8eff'} />
   const alertIcon = <Ionicons name="notifications-outline" size={24} color={'#948e8eff'} /> 
   const alertIcon2 = <Ionicons name="notifications-sharp" size={24} color={'#948e8eff'} />
-  const profileIcon = <FontAwesome6 name="user-circle" size={24} color={'#948e8eff'} /> 
+  const profileIcon = <FontAwesome name="user-circle" size={24} color={'#948e8eff'} /> 
 
 
 
@@ -97,8 +97,8 @@ let year = 2025;
                 <MyFooter renderIcon icon={homeIcon} label={'Home'} />
                 <MyFooter renderIcon icon={calculatorIcon} label={'Calculate'} />
                 <MyFooter renderIcon icon={historyIcon} label={'History'} />
-                <MyFooter renderIcon icon={alertIcon} label={'Alerts'} />
-                <MyFooter renderIcon icon={profileIcon} label={'Profile'} />
+                <MyFooter whenPressed={()=>{router.push('notification')}} renderIcon icon={alertIcon} label={'Alerts'} />
+                <MyFooter whenPressed={()=>{router.push('profile-settings1')}} renderIcon icon={profileIcon} label={'Profile'} />
 
         </View>
 
@@ -117,27 +117,28 @@ const mystyles = StyleSheet.create({
   },
 
   container2:{
-    marginHorizontal: 15,
-    marginVertical: 20,
+    marginHorizontal: 16,
+    paddingVertical: 20,
   },
 
   style1:{
     backgroundColor: '#ffffff',
     marginTop: 60,
     marginVertical: 10,
+    marginBottom: 30,
     paddingVertical: 55,
     borderRadius: 20,
     alignItems: 'center',
     borderWidth: .8,
     borderColor: '#afa9a9ff',
-
   },
 
   style1Text:{
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 16,
     marginVertical: 25,
-    color: '#555454ff'
+    marginHorizontal: 20,
+    color: '#212121BF'
   },
 
   footerStyle:{

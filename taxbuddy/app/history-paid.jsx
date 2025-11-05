@@ -25,7 +25,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
 
-const historyUnpaid = () =>{
+
+const historyPaid = () =>{
 
 
 
@@ -52,8 +53,8 @@ const historyUnpaid = () =>{
 
 
 let total = 1;
-let paid = 0;
-let unPaid = 1;
+let paid = 1;
+let unPaid = 0;
 let paidAmount = 0;
 
 let income = 500000;
@@ -78,7 +79,7 @@ let year = 2025;
                         value1={total}
                         value2={paid}
                         value3={unPaid}
-                        value4={paidAmount}
+                        value4={taxAmount}
 
                         whenPressed={() =>{}}
                         myMonth={month}
@@ -90,7 +91,7 @@ let year = 2025;
 
                           <View style={mystyles.sub}>
                                 <Text style={mystyles.text1}>October 2025</Text>
-                                <Text style={mystyles.text2}>Unpaid</Text>
+                                <Text style={mystyles.text2}>Paid</Text>
                           </View>
 
                           <View style={mystyles.sub2}>
@@ -116,11 +117,24 @@ let year = 2025;
                           </View>
 
 
-                          <View style={{gap: 8, marginHorizontal: 16, marginVertical: 8}}>
+                          <View style={mystyles.sub5}>
+                                <View style={{gap: 8}}>
                                     <Text style={mystyles.text3}>Tax Rate</Text>
                                     <View>
                                             <Text style={mystyles.text3}>{taxRate}%</Text>
                                     </View>
+                                </View>
+                                <View style={{gap: 8}}>
+                                    <Text style={{fontSize: 16, color: '#1a1716', alignSelf: 'flex-end'}}>Paid On</Text>
+                                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                        <Text style={mystyles.text3}>10</Text>
+                                        <Text style={mystyles.text3}>/</Text>
+                                        <Text style={mystyles.text3}>23</Text>
+                                        <Text style={mystyles.text3}>/</Text>
+                                        <Text style={mystyles.text3}>2025</Text>
+                                    </View>
+                                    
+                                </View>
                           </View>
 
                           <View style={mystyles.sub2}>
@@ -131,11 +145,7 @@ let year = 2025;
 
                           </View>
 
-                          <MyButton2
-                                  whenPressed={() =>{router.push('history-mark-paid')}} 
-                                  renderIcon icon={checkCircleIcon}
-                                  label={'Mark as Paid'}
-                          />
+                          
                     </View>
 
                 
@@ -148,7 +158,7 @@ let year = 2025;
                 <MyFooter renderIcon icon={homeIcon} label={'Home'} />
                 <MyFooter renderIcon icon={calculatorIcon} label={'Calculate'} />
                 <MyFooter renderIcon icon={historyIcon} label={'History'} />
-                <MyFooter whenPressed={()=>{router.push('notification')}}  renderIcon icon={alertIcon} label={'Alerts'} />
+                <MyFooter whenPressed={()=>{router.push('notification')}} renderIcon icon={alertIcon} label={'Alerts'} />
                 <MyFooter whenPressed={()=>{router.push('profile-settings1')}} renderIcon icon={profileIcon} label={'Profile'} />
 
         </View>
@@ -231,6 +241,14 @@ const mystyles = StyleSheet.create({
     color: '#1a1716',
   },
 
+  sub5:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 16,
+    marginVertical: 8,
+  },
+
   footerStyle:{
     flexDirection: 'row',
     paddingHorizontal: 15,
@@ -245,4 +263,4 @@ const mystyles = StyleSheet.create({
 
 
 
-export default historyUnpaid;
+export default historyPaid;
