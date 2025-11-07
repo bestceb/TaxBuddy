@@ -1,9 +1,9 @@
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useState} from "react";
 import { router } from "expo-router";
-import { Picker } from '@react-native-picker/picker';
+import { useState } from "react";
 import { Dropdown } from 'react-native-element-dropdown'
+
 
 // Re-usable components
 import MyHeader from "../components/header";
@@ -18,8 +18,8 @@ import Feather from '@expo/vector-icons/Feather';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-
 
 
 
@@ -56,36 +56,43 @@ const data2 = [
 
 
 
+const bHistoryUnpaid = () =>{
 
 
-export default function Index() {
+
+
+  const arrowLeftIcon = <Feather name="arrow-left" size={24} color={'#000'} />
+
+  const homeIcon = <Ionicons name="home-outline" size={24} color={'#948e8eff'} /> 
+  const calculatorIcon = <Ionicons name="calculator-outline" size={24} color={'#948e8eff'} /> 
+  const historyIcon = <MaterialIcons name="access-time-filled" size={24} color={'#999123ff'} />
+  const historyIcon2 = <MaterialIcons name="access-time" size={24} color={'#948e8eff'} />
+
+  const alertIcon = <Ionicons name="notifications-outline" size={24} color={'#948e8eff'} /> 
+  const alertIcon2 = <Ionicons name="notifications-sharp" size={24} color={'#948e8eff'} />
+  const profileIcon = <FontAwesome name="user-circle" size={24} color={'#948e8eff'} /> 
+  const nairaIcon = <FontAwesome6 name="naira-sign" size={12} color={'#1a1716'} letterSpacing={-.2} />
+  
+  const checkCircleIcon = <Ionicons name="checkmark-circle-outline" size={20} color={'#f9fafb'} />
+  const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#F9FAFB'} right={120} />
+
+
 
 
     const [selectedMonth, setSelectedMonth] = useState(null);
     const [selectedYear, setSelectedYear] = useState(2025);
 
 
-  const arrowLeftIcon = <Feather name="arrow-left" size={24} color={'#000'} />
-  const calendarIcon = <SimpleLineIcons name="calendar" size={55} color={'#15010680'} />
-
-  const homeIcon = <Ionicons name="home-outline" size={24} color={'#948e8eff'} /> 
-  const calculatorIcon = <Ionicons name="calculator-outline" size={24} color={'#948e8eff'} /> 
-  const historyIcon = <MaterialIcons name="access-time-filled" size={24} color={'#999123ff'} />
-  const historyIcon2 = <MaterialIcons name="access-time" size={24} color={'#948e8eff'} />
-  const alertIcon = <Ionicons name="notifications-outline" size={24} color={'#948e8eff'} /> 
-  const alertIcon2 = <Ionicons name="notifications-sharp" size={24} color={'#948e8eff'} />
-  const profileIcon = <FontAwesome name="user-circle" size={24} color={'#948e8eff'} /> 
-  const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#ffffff'} right={120} />
 
 
-
-
-
-
-let total = 0;
+let total = 1;
 let paid = 0;
-let unPaid = 0;
+let unPaid = 1;
 let paidAmount = 0;
+
+let income = 500000;
+let taxAmount = 100000;
+let taxRate = 20.00;
 
 let month = 'Month';
 let year = 2025;
@@ -112,40 +119,7 @@ let year = 2025;
                         myYear={year}
                     />
 
-
-                    {/* <View>
-                          <Text>Selected Language: {selectedMonth}</Text>
-                          <Picker
-                              selectedValue={selectedMonth}
-                              onValueChange={(itemValue, itemIndex) => setSelectedMonth(itemValue)}
-                              style={{height: 50, width: 150}}
-                          >
-
-                              <Picker.Item label="January" value={'1'} />
-                              <Picker.Item label="Fabruary" value={'2'} />
-                              <Picker.Item label="March" value={'3'} />
-                              <Picker.Item label="April" value={'4'} />
-                              <Picker.Item label="May" value={'5'} />
-                              <Picker.Item label="June" value={'6'} />
-                              <Picker.Item label="july" value={'7'} />
-                          </Picker>
-                    </View> */}
-
-
-                    {/* <View>
-                           <Text>Select Item: {value}</Text>
-                          <Dropdown
-                              data={data}
-                              labelField={'label'}
-                              placeholder="Month"
-                              value={'label'}
-                              onChange={item => setValue(item.value)}
-                              style={{backgroundColor: '#34f3' ,margin: 16, height: 50, borderColor: 'gray', borderWidth: .5, borderRadius:8, paddingHorizontal: 8}}
-                              renderRightIcon={() =>(arrowDropDownIcon)}
-                          />
-                    </View> */}
-
-                                    <View>
+                    <View>
                                         <Dropdown
                                                     data={data}
                                                     labelField={'label'}
@@ -176,16 +150,55 @@ let year = 2025;
                                     </View>
 
 
-
-
-
                     <View style={mystyles.style1} >
-                          {calendarIcon}
-                          <Text style={mystyles.style1Text}>Enter your income and tap calculate to view your tax breakdown</Text>
-                          
+
+                          <View style={mystyles.sub}>
+                                <Text style={mystyles.text1}>October 2025</Text>
+                                <Text style={mystyles.text2}>Unpaid</Text>
+                          </View>
+
+                          <View style={mystyles.sub2}>
+
+                                <View style={{gap: 8,}}>
+                                    <Text style={mystyles.text3}>Income</Text>
+                                    <View style={mystyles.sub3}>
+                                            {nairaIcon}
+                                            <Text style={mystyles.text3}>{income}</Text>
+                                    </View>
+                                </View>
+
+                                <View style={{gap: 8,}}>
+                                    <Text style={mystyles.text3}>Tax Amount</Text>
+                                    <View style={mystyles.sub4}>
+                                            {nairaIcon}
+                                            <Text style={mystyles.text3}>{taxAmount}</Text>
+                                    </View>
+                                </View>
+
+                                
+                                
+                          </View>
+
+
+                          <View style={{gap: 8, marginHorizontal: 16, marginVertical: 8}}>
+                                    <Text style={mystyles.text3}>Tax Rate</Text>
+                                    <View>
+                                            <Text style={mystyles.text3}>{taxRate}%</Text>
+                                    </View>
+                          </View>
+
+                          <View style={mystyles.sub2}>
+                            
+                                
+
+                                
+
+                          </View>
+
                           <MyButton2
-                                  whenPressed={() =>{router.push('history-unpaid')}} 
-                                  label={'Calculate Your First Tax'}
+                                  whenPressed={() =>{router.push('B-history-mark-paid')}} 
+                                  renderIcon icon={checkCircleIcon}
+                                  label={'Mark as Paid'}
                           />
                     </View>
 
@@ -199,8 +212,8 @@ let year = 2025;
                 <MyFooter source={require('../assets/images/home1.png')} label={'Home'} />
                 <MyFooter source={require('../assets/images/calculator1.png')} label={'Calculate'} />
                 <MyFooter source={require('../assets/images/history2.png')} label={'History'} />
-                <MyFooter whenPressed={()=>{router.push('notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
-                <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
+                <MyFooter whenPressed={()=>{router.push('b-notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
+                <MyFooter whenPressed={()=>{router.push('b-profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
 
         </View>
 
@@ -219,28 +232,20 @@ const mystyles = StyleSheet.create({
   },
 
   container2:{
-    marginHorizontal: 16,
-    paddingVertical: 20,
+    marginHorizontal: 15,
+    marginVertical: 20,
   },
 
   style1:{
     backgroundColor: '#ffffff',
     marginTop: 60,
     marginVertical: 10,
-    marginBottom: 30,
-    paddingVertical: 55,
+    paddingVertical: 15,
+    //paddingHorizontal: 16,
     borderRadius: 20,
-    alignItems: 'center',
     borderWidth: .8,
     borderColor: '#afa9a9ff',
-  },
 
-  style1Text:{
-    textAlign: 'center',
-    fontSize: 16,
-    marginVertical: 25,
-    marginHorizontal: 20,
-    color: '#212121BF'
   },
 
   style6:{
@@ -251,6 +256,53 @@ const mystyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     
+  },
+
+  sub:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 45,
+    paddingHorizontal: 16,
+
+  },
+
+  text1:{
+    fontSize: 24,
+    fontWeight: 500,
+    letterSpacing: -.15,
+    lineHeight: 30,
+    color: '#212121'
+  },
+
+  text2:{
+    fontSize: 16,
+    lineHeight: 24, 
+    color: '#ff0000'
+  },
+
+  sub2:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    marginBottom: 16,
+  },
+
+  sub3:{
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  sub4:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-end'
+  },
+
+  text3:{
+    fontSize: 16,
+    color: '#1a1716',
   },
 
   footerStyle:{
@@ -264,3 +316,7 @@ const mystyles = StyleSheet.create({
 
 
 })
+
+
+
+export default bHistoryUnpaid;

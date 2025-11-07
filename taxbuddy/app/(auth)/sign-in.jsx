@@ -17,9 +17,12 @@ const signIn = () =>{
 
             <View style={mystyles.style1}>
                     <Image style={mystyles.imageStyle} source={require('../../assets/images/app-logo.png')} />
-                    <Text style={mystyles.style2} >Hi welcome back, you've been missed login to your account</Text>
+                    <Text style={mystyles.text1} >Hi welcome back, you've been missed login to your account</Text>
 
             </View>
+
+
+
 
 
 
@@ -43,6 +46,7 @@ const mystyles = StyleSheet.create({
     style1:{
         marginTop: 30,
         alignItems: 'center',
+        marginBottom: 56,
     },
 
     imageStyle:{
@@ -51,7 +55,7 @@ const mystyles = StyleSheet.create({
         marginBottom: 8,
     },
 
-    style2:{
+    text1:{
         textAlign: 'center',
         color: '#367e34',
         lineHeight: 20,

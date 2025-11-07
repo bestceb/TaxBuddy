@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, ScrollView, TouchableOpacity, } from "react-nat
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { useState } from "react";
-import { Dropdown } from 'react-native-element-dropdown'
+import { Dropdown } from 'react-native-element-dropdown';
 
 
 // Re-usable components
@@ -56,7 +56,8 @@ const data2 = [
 
 
 
-const historyUnpaid = () =>{
+
+const bHistoryPaid = () =>{
 
 
 
@@ -78,7 +79,6 @@ const historyUnpaid = () =>{
 
 
 
-
     const [selectedMonth, setSelectedMonth] = useState(null);
     const [selectedYear, setSelectedYear] = useState(2025);
 
@@ -86,8 +86,8 @@ const historyUnpaid = () =>{
 
 
 let total = 1;
-let paid = 0;
-let unPaid = 1;
+let paid = 1;
+let unPaid = 0;
 let paidAmount = 0;
 
 let income = 500000;
@@ -112,49 +112,47 @@ let year = 2025;
                         value1={total}
                         value2={paid}
                         value3={unPaid}
-                        value4={paidAmount}
+                        value4={taxAmount}
 
                         whenPressed={() =>{}}
-                        myMonth={month}
-                        myYear={year}
                     />
 
                     <View>
-                                        <Dropdown
-                                                    data={data}
-                                                    labelField={'label'}
-                                                    placeholder="Month"
-                                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                    selectedMonth={'label'}
-                                                    onChange={item => setSelectedMonth(item.selectedMonth)}
-                                                    style={mystyles.style6}
-                                                    renderRightIcon={() =>(arrowDropDownIcon)}
-                                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                    
-                                        />
-                                    </View>
+                        <Dropdown
+                                    data={data}
+                                    labelField={'label'}
+                                    placeholder="Month"
+                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    selectedMonth={'label'}
+                                    onChange={item => setSelectedMonth(item.selectedMonth)}
+                                    style={mystyles.style6}
+                                    renderRightIcon={() =>(arrowDropDownIcon)}
+                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    
+                        />
+                    </View>
                     
-                                    <View>
-                                        <Dropdown
-                                                      data={data2}
-                                                      labelField={'label'}
-                                                      placeholder="Month"
-                                                      placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                      selectedMonth={'label'}
-                                                      onChange={item => setSelectedYear(item.selectedYear)}
-                                                      style={mystyles.style6}
-                                                      renderRightIcon={() =>(arrowDropDownIcon)}
-                                                      selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                      
-                                        />
-                                    </View>
+                    <View>
+                        <Dropdown
+                                        data={data2}
+                                        labelField={'label'}
+                                        placeholder="Month"
+                                        placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                        selectedMonth={'label'}
+                                        onChange={item => setSelectedYear(item.label)}
+                                        style={mystyles.style6}
+                                        renderRightIcon={() =>(arrowDropDownIcon)}
+                                        selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                        
+                        />
+                    </View>
 
 
                     <View style={mystyles.style1} >
 
                           <View style={mystyles.sub}>
-                                <Text style={mystyles.text1}>October 2025</Text>
-                                <Text style={mystyles.text2}>Unpaid</Text>
+                                <Text style={mystyles.text1}>October {selectedYear}</Text>
+                                <Text style={mystyles.text2}>Paid</Text>
                           </View>
 
                           <View style={mystyles.sub2}>
@@ -180,11 +178,24 @@ let year = 2025;
                           </View>
 
 
-                          <View style={{gap: 8, marginHorizontal: 16, marginVertical: 8}}>
+                          <View style={mystyles.sub5}>
+                                <View style={{gap: 8}}>
                                     <Text style={mystyles.text3}>Tax Rate</Text>
                                     <View>
                                             <Text style={mystyles.text3}>{taxRate}%</Text>
                                     </View>
+                                </View>
+                                <View style={{gap: 8}}>
+                                    <Text style={{fontSize: 16, color: '#1a1716', alignSelf: 'flex-end'}}>Paid On</Text>
+                                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                        <Text style={mystyles.text3}>{selectedMonth}</Text>
+                                        <Text style={mystyles.text3}>/</Text>
+                                        <Text style={mystyles.text3}>23</Text>
+                                        <Text style={mystyles.text3}>/</Text>
+                                        <Text style={mystyles.text3}>{selectedYear}</Text>
+                                    </View>
+                                    
+                                </View>
                           </View>
 
                           <View style={mystyles.sub2}>
@@ -195,11 +206,7 @@ let year = 2025;
 
                           </View>
 
-                          <MyButton2
-                                  whenPressed={() =>{router.push('history-mark-paid')}} 
-                                  renderIcon icon={checkCircleIcon}
-                                  label={'Mark as Paid'}
-                          />
+                          
                     </View>
 
                 
@@ -209,12 +216,12 @@ let year = 2025;
 
 
         <View style={mystyles.footerStyle}>
-                        <MyFooter source={require('../assets/images/home1.png')} label={'Home'} />
-                        <MyFooter source={require('../assets/images/calculator1.png')} label={'Calculate'} />
-                        <MyFooter source={require('../assets/images/history2.png')} label={'History'} />
-                        <MyFooter whenPressed={()=>{router.push('notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
-                        <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
-        
+                <MyFooter source={require('../assets/images/home1.png')} label={'Home'} />
+                <MyFooter source={require('../assets/images/calculator1.png')} label={'Calculate'} />
+                <MyFooter source={require('../assets/images/history2.png')} label={'History'} />
+                <MyFooter whenPressed={()=>{router.push('b-notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
+                <MyFooter whenPressed={()=>{router.push('b-profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
+
         </View>
 
 
@@ -246,16 +253,6 @@ const mystyles = StyleSheet.create({
     borderWidth: .8,
     borderColor: '#afa9a9ff',
 
-  },
-
-  style6:{
-    backgroundColor: '#f76d1b',
-    marginVertical: 8,
-    borderRadius: 10,
-    paddingVertical: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    
   },
 
   sub:{
@@ -305,6 +302,24 @@ const mystyles = StyleSheet.create({
     color: '#1a1716',
   },
 
+  sub5:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 16,
+    marginVertical: 8,
+  },
+
+  style6:{
+    backgroundColor: '#f76d1b',
+    marginVertical: 8,
+    borderRadius: 10,
+    paddingVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  },
+
   footerStyle:{
     flexDirection: 'row',
     paddingHorizontal: 15,
@@ -319,4 +334,4 @@ const mystyles = StyleSheet.create({
 
 
 
-export default historyUnpaid;
+export default bHistoryPaid;

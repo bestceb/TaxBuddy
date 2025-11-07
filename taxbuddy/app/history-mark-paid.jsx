@@ -1,6 +1,9 @@
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
+import { useState } from "react";
+import { Dropdown } from 'react-native-element-dropdown'
+
 
 // Re-usable components
 import MyHeader from "../components/header";
@@ -19,7 +22,35 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 
 
+const data = [
+  {label: 'January', selectedMonth: '1'},
+  {label: 'February', selectedMonth: '2'},
+  {label: 'March', selectedMonth: '3'},
+  {label: 'April', selectedMonth: '4'},
+  {label: 'May', selectedMonth: '5'},
+  {label: 'June', selectedMonth: '6'},
+  {label: 'July', selectedMonth: '7'},
+  {label: 'August', selectedMonth: '8'},
+  {label: 'September', selectedMonth: '9'},
+  {label: 'October', selectedMonth: '10'},
+  {label: 'November', selectedMonth: '11'},
+  {label: 'December', selectedMonth: '12'},
+]
 
+const data2 = [
+  {label: '2025', selectedYear: '1'},
+  {label: '2024', selectedYear: '2'},
+  {label: '2023', selectedYear: '3'},
+  {label: '2022', selectedYear: '4'},
+  {label: '2021', selectedYear: '5'},
+  {label: '2020', selectedYear: '6'},
+  {label: '2019', selectedYear: '7'},
+  {label: '2018', selectedYear: '8'},
+  {label: '2017', selectedYear: '9'},
+  {label: '2016', selectedYear: '10'},
+  {label: '2015', selectedYear: '11'},
+  {label: '2014', selectedYear: '12'},
+]
 
 
 
@@ -40,10 +71,13 @@ const historyMarkPaid = () =>{
   const alertIcon2 = <Ionicons name="notifications-sharp" size={24} color={'#948e8eff'} />
   const profileIcon = <FontAwesome6 name="user-circle" size={24} color={'#948e8eff'} />
   const nairaIcon = <FontAwesome6 name="naira-sign" size={12} color={'#717182'} letterSpacing={-.2} />
+  const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#F9FAFB'} right={120} />
   
 
 
 
+    const [selectedMonth, setSelectedMonth] = useState(null);
+    const [selectedYear, setSelectedYear] = useState(2025);
 
 
 
@@ -77,6 +111,36 @@ let year = 2025;
                         myMonth={month}
                         myYear={year}
                     />
+
+                    <View>
+                                        <Dropdown
+                                                    data={data}
+                                                    labelField={'label'}
+                                                    placeholder="Month"
+                                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                    selectedMonth={'label'}
+                                                    onChange={item => setSelectedMonth(item.selectedMonth)}
+                                                    style={mystyles.style6}
+                                                    renderRightIcon={() =>(arrowDropDownIcon)}
+                                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                    
+                                        />
+                                    </View>
+                    
+                                    <View>
+                                        <Dropdown
+                                                      data={data2}
+                                                      labelField={'label'}
+                                                      placeholder="Month"
+                                                      placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                      selectedMonth={'label'}
+                                                      onChange={item => setSelectedYear(item.selectedYear)}
+                                                      style={mystyles.style6}
+                                                      renderRightIcon={() =>(arrowDropDownIcon)}
+                                                      selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                      
+                                        />
+                                    </View>
 
                 </View>
 
@@ -185,6 +249,16 @@ const mystyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 8,
+  },
+
+  style6:{
+    backgroundColor: '#f76d1b',
+    marginVertical: 8,
+    borderRadius: 10,
+    paddingVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
   },
 
   button:{

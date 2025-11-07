@@ -4,6 +4,8 @@ import { router } from "expo-router";
 
 
 import MainHeader from "../../components/mainHeader";
+import MyButton3 from "../../components/buttons3";
+import MyMessage from "../../components/new-message";
 import MyFooter from "../../components/footer";
 
 
@@ -17,7 +19,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
-const notification = () =>{
+const bNotification2 = () =>{
 
 
 
@@ -38,7 +40,22 @@ const notification = () =>{
 
 
 
+let total = 0;
+let paid = 0;
+let unPaid = 0;
+let paidAmount = 0;
 
+let year = 2025;
+let month = 'October';
+let month2 = 10;
+let day = 23;
+
+let hour = 7;
+let min = 30;
+let sec = 22;
+
+let pm = 'PM';
+let am = 'AM';
 
     return(
 
@@ -53,20 +70,29 @@ const notification = () =>{
 
 
                 <ScrollView>
+
+                    <MyButton3
+                        whenPressed1={()=>{router.back('notification')}}
+                        label={'Mark all as read'}
+                        
+                        whenPressed2={()=>{router.back('notification')}}
+                        label2={'Delete'}
+                    />
+
+                    <MyMessage 
+                        label1={'New'}
+                        label2={'Mark as Read'}
+
+                        label3={'Tax record for ' + month + ' ' + year + ' saved successfully'}
+                        label4={month2 + '/' + day + '/' + year + ', ' + hour + ':' + min + ':' + sec + ' ' + pm}
+                    />
+
+
+
                     <View style={mystyles.style1}>
-
-                            {alertIcon}
-                            <Text style={mystyles.style2}>No notifications yet</Text>
-                            <Text style={mystyles.style2}>You'll see tax reminders and updates here</Text>
-
+                        <Text style={mystyles.text1}>About Notifications</Text>
+                        <Text style={mystyles.text2}>Notifications help you stay on top of your tax obligations. Enable reminders in your profile settings to get alerts about upcoming due dates.</Text>
                     </View>
-                    
-                        {/* Temporal */}
-                    <TouchableOpacity onPress={()=>{router.push('notification2')}} style={{backgroundColor: 'blue', width: 40, height: 40, borderRadius: 20, position: 'absolute', top: 100, alignSelf: 'center'}}>
-                            <Text style={{alignSelf: 'center', color: 'white', fontWeight: 900, fontSize: 18}}>B</Text>
-                    </TouchableOpacity>
-
-
 
                 </ScrollView>
 
@@ -76,9 +102,9 @@ const notification = () =>{
                     <View style={mystyles.footerStyle}>
                         <MyFooter source={require('../../assets/images/home1.png')} label={'Home'} />
                         <MyFooter source={require('../../assets/images/calculator1.png')} label={'Calculate'} />
-                        <MyFooter whenPressed={()=>{router.push('history')}} source={require('../../assets/images/history1.png')} label={'History'} />
+                        <MyFooter whenPressed={()=>{router.push('B-history')}} source={require('../../assets/images/history1.png')} label={'History'} />
                         <MyFooter source={require('../../assets/images/alert2.png')} label={'Alerts'} />
-                        <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../../assets/images/profile1.png')} label={'Profile'} />
+                        <MyFooter whenPressed={()=>{router.push('b-profile-settings1')}} source={require('../../assets/images/profile1.png')} label={'Profile'} />
 
                     </View>
 
@@ -100,22 +126,26 @@ const mystyles = StyleSheet.create({
     },
 
     style1:{
-        backgroundColor: '#ffffff',
+        backgroundColor: '#FEF0E8',
         marginHorizontal: 16,
         //width: 370,
-        height: 356,
-        top: 150,
-        justifyContent: 'center',
-        alignItems: 'center',
+        height: 176,
         borderRadius: 20,
-        borderWidth: 1,
-        borderColor: '#1A171640',
-        gap: 32,
+        padding: 16,
+        gap: 24,
+        marginTop: 96,
+
     },
 
-    style2:{
-        color: '#212121BF',
+    text1:{
+        fontWeight: 500,
+        fontSize: 20,
+        color: '#212121'
+    },
+
+    text2:{
         fontSize: 16,
+        color: '#212121BF',
     },
 
     footerStyle:{
@@ -132,4 +162,4 @@ const mystyles = StyleSheet.create({
 
 
 
-export default notification;
+export default bNotification2;

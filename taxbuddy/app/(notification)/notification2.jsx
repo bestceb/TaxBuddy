@@ -100,11 +100,11 @@ let am = 'AM';
 
 
                     <View style={mystyles.footerStyle}>
-                        <MyFooter renderIcon icon={homeIcon} label={'Home'} />
-                        <MyFooter renderIcon icon={calculatorIcon} label={'Calculate'} />
-                        <MyFooter whenPressed={()=>{router.push('history')}} renderIcon icon={historyIcon} label={'History'} />
-                        <MyFooter renderIcon icon={alertIcon2} label={'Alerts'} />
-                        <MyFooter whenPressed={()=>{router.push('profile-settings1')}} renderIcon icon={profileIcon} label={'Profile'} />
+                        <MyFooter source={require('../../assets/images/home1.png')} label={'Home'} />
+                        <MyFooter source={require('../../assets/images/calculator1.png')} label={'Calculate'} />
+                        <MyFooter whenPressed={()=>{router.push('history')}} source={require('../../assets/images/history1.png')} label={'History'} />
+                        <MyFooter source={require('../../assets/images/alert2.png')} label={'Alerts'} />
+                        <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../../assets/images/profile1.png')} label={'Profile'} />
 
                     </View>
 

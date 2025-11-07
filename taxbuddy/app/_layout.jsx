@@ -34,7 +34,9 @@ if(showSplash){
           <Stack.Screen name="history-mark-paid"/>
           <Stack.Screen name="history-paid"/>
           <Stack.Screen name="(notification)"/>
+          <Stack.Screen name="(b-notification)"/>
           <Stack.Screen name="(profile-settings)"/>
+          <Stack.Screen name="(b-profile-settings)"/>
           
 
     </Stack>

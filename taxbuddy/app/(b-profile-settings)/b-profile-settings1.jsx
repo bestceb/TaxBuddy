@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, TextInput, TouchableOpacity,  } fro
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { useState } from "react";
-
+import { Dropdown } from 'react-native-element-dropdown';
 
 
 import MainHeader from "../../components/mainHeader";
@@ -22,10 +22,22 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
 
-const profileSettings1 = () =>{
+
+const data = [
+  {label: 'Sole proprietorship', selectedBusiness: '1'},
+  {label: 'Partnership', selectedBusiness: '2'},
+  {label: 'Limited liability company (LLC)', selectedBusiness: '3'},
+  {label: 'Corporation', selectedBusiness: '4'},
+  {label: 'Franchise', selectedBusiness: '5'},
+  {label: 'Cooporative', selectedBusiness: '6'},
+  {label: 'Nonprofit corporation', selectedBusiness: '7'},
+]
 
 
-      const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#ffffff'} />
+const bProfileSettings1 = () =>{
+
+
+      const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#F9FAFB'} right={40} />
       const toggleOffIcon = <MaterialIcons name="toggle-off" size={40} color={'#21212140'} />
       const toggleOnIcon = <MaterialIcons name="toggle-on" size={40} color={'#367E34'} />
 
@@ -42,6 +54,10 @@ const profileSettings1 = () =>{
 
     
     const [isToggled, setIsToggled] = useState(false);
+    const [selectedBusiness, setSelectedBusiness] = useState('Business Type');
+
+
+
 
     const handleToggle = () =>{
         setIsToggled(!isToggled)
@@ -67,15 +83,30 @@ const profileSettings1 = () =>{
 
                     <View>
                             <Text style={mystyles.text2}>Account Type</Text>
-                            <Text style={mystyles.text3}>Individual</Text>
+                            <Text style={mystyles.text3}>Business</Text>
                             <Text style={mystyles.text4}>Account type cannot be changed</Text>
 
                     </View>
 
                     <View>
-                            <Text style={mystyles.text2}>Full Name</Text>
-                            <Text style={mystyles.text3}>Samuel James</Text>
+                            <Text style={mystyles.text2}>Business Name</Text>
+                            <Text style={mystyles.text3}>Beauty's Enterprise</Text>
 
+                    </View>
+
+                    <View>
+                        <Dropdown
+                                    data={data}
+                                    labelField={'label'}
+                                    placeholder="Business Type"
+                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    selectedMonth={'label'}
+                                    onChange={item => setSelectedBusiness(item.selectedBusiness)}
+                                    style={mystyles.dropStyle}
+                                    renderRightIcon={() =>(arrowDropDownIcon)}
+                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    
+                        />
                     </View>
 
                     <MyButton4
@@ -99,7 +130,7 @@ const profileSettings1 = () =>{
                 <View style={mystyles.style2}>
 
                         <Text style={mystyles.text5}>Account Security</Text>
-                        <TouchableOpacity onPress={()=>{router.push('profile-settings2')}}>
+                        <TouchableOpacity onPress={()=>{router.push('b-profile-settings2')}}>
                                 <Text style={{fontSize: 16, fontWeight: 500}}>Change Password</Text>
                         </TouchableOpacity>
                 </View>
@@ -144,8 +175,8 @@ const profileSettings1 = () =>{
             <View style={mystyles.footerStyle}>
                             <MyFooter source={require('../../assets/images/home1.png')} label={'Home'} />
                             <MyFooter source={require('../../assets/images/calculator1.png')} label={'Calculate'} />
-                            <MyFooter whenPressed={()=>{router.push('history')}} source={require('../../assets/images/history1.png')} label={'History'} />
-                            <MyFooter whenPressed={()=>{router.push('notification')}} source={require('../../assets/images/alert1.png')} label={'Alerts'} />
+                            <MyFooter whenPressed={()=>{router.push('B-history')}} source={require('../../assets/images/history1.png')} label={'History'} />
+                            <MyFooter whenPressed={()=>{router.push('b-notification')}} source={require('../../assets/images/alert1.png')} label={'Alerts'} />
                             <MyFooter whenPressed={()=>{}} source={require('../../assets/images/profile2.png')} label={'Profile'} />
             
             </View>
@@ -175,7 +206,7 @@ const mystyles = StyleSheet.create({
         borderRadius: 20,
         paddingHorizontal: 16,
         paddingVertical: 32,
-        height: 531,
+        height: 642,
         gap: 32,
         marginTop: 40,
         marginBottom: 48,
@@ -202,6 +233,16 @@ const mystyles = StyleSheet.create({
         paddingHorizontal: 16,
         marginBottom: 4,
     },
+
+    dropStyle:{
+    backgroundColor: '#f76d1b',
+    marginVertical: 8,
+    borderRadius: 10,
+    paddingVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  },
 
     text4:{
         color: '#F76D1B'
@@ -330,4 +371,4 @@ const mystyles = StyleSheet.create({
 
 
 
-export default profileSettings1;
+export default bProfileSettings1;

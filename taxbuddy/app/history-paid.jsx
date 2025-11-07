@@ -1,6 +1,9 @@
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
+import { useState } from "react";
+import { Dropdown } from 'react-native-element-dropdown'
+
 
 // Re-usable components
 import MyHeader from "../components/header";
@@ -21,7 +24,35 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
 
+const data = [
+  {label: 'January', selectedMonth: '1'},
+  {label: 'February', selectedMonth: '2'},
+  {label: 'March', selectedMonth: '3'},
+  {label: 'April', selectedMonth: '4'},
+  {label: 'May', selectedMonth: '5'},
+  {label: 'June', selectedMonth: '6'},
+  {label: 'July', selectedMonth: '7'},
+  {label: 'August', selectedMonth: '8'},
+  {label: 'September', selectedMonth: '9'},
+  {label: 'October', selectedMonth: '10'},
+  {label: 'November', selectedMonth: '11'},
+  {label: 'December', selectedMonth: '12'},
+]
 
+const data2 = [
+  {label: '2025', selectedYear: '1'},
+  {label: '2024', selectedYear: '2'},
+  {label: '2023', selectedYear: '3'},
+  {label: '2022', selectedYear: '4'},
+  {label: '2021', selectedYear: '5'},
+  {label: '2020', selectedYear: '6'},
+  {label: '2019', selectedYear: '7'},
+  {label: '2018', selectedYear: '8'},
+  {label: '2017', selectedYear: '9'},
+  {label: '2016', selectedYear: '10'},
+  {label: '2015', selectedYear: '11'},
+  {label: '2014', selectedYear: '12'},
+]
 
 
 
@@ -44,10 +75,12 @@ const historyPaid = () =>{
   const nairaIcon = <FontAwesome6 name="naira-sign" size={12} color={'#1a1716'} letterSpacing={-.2} />
   
   const checkCircleIcon = <Ionicons name="checkmark-circle-outline" size={20} color={'#f9fafb'} />
+  const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#F9FAFB'} right={120} />
 
 
 
-
+    const [selectedMonth, setSelectedMonth] = useState(null);
+    const [selectedYear, setSelectedYear] = useState(2025);
 
 
 
@@ -82,15 +115,43 @@ let year = 2025;
                         value4={taxAmount}
 
                         whenPressed={() =>{}}
-                        myMonth={month}
-                        myYear={year}
                     />
+
+                    <View>
+                                        <Dropdown
+                                                    data={data}
+                                                    labelField={'label'}
+                                                    placeholder="Month"
+                                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                    selectedMonth={'label'}
+                                                    onChange={item => setSelectedMonth(item.selectedMonth)}
+                                                    style={mystyles.style6}
+                                                    renderRightIcon={() =>(arrowDropDownIcon)}
+                                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                    
+                                        />
+                                    </View>
+                    
+                                    <View>
+                                        <Dropdown
+                                                      data={data2}
+                                                      labelField={'label'}
+                                                      placeholder="Month"
+                                                      placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                      selectedMonth={'label'}
+                                                      onChange={item => setSelectedYear(item.label)}
+                                                      style={mystyles.style6}
+                                                      renderRightIcon={() =>(arrowDropDownIcon)}
+                                                      selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                      
+                                        />
+                                    </View>
 
 
                     <View style={mystyles.style1} >
 
                           <View style={mystyles.sub}>
-                                <Text style={mystyles.text1}>October 2025</Text>
+                                <Text style={mystyles.text1}>October {selectedYear}</Text>
                                 <Text style={mystyles.text2}>Paid</Text>
                           </View>
 
@@ -127,11 +188,11 @@ let year = 2025;
                                 <View style={{gap: 8}}>
                                     <Text style={{fontSize: 16, color: '#1a1716', alignSelf: 'flex-end'}}>Paid On</Text>
                                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                                        <Text style={mystyles.text3}>10</Text>
+                                        <Text style={mystyles.text3}>{selectedMonth}</Text>
                                         <Text style={mystyles.text3}>/</Text>
                                         <Text style={mystyles.text3}>23</Text>
                                         <Text style={mystyles.text3}>/</Text>
-                                        <Text style={mystyles.text3}>2025</Text>
+                                        <Text style={mystyles.text3}>{selectedYear}</Text>
                                     </View>
                                     
                                 </View>
@@ -155,11 +216,11 @@ let year = 2025;
 
 
         <View style={mystyles.footerStyle}>
-                <MyFooter renderIcon icon={homeIcon} label={'Home'} />
-                <MyFooter renderIcon icon={calculatorIcon} label={'Calculate'} />
-                <MyFooter renderIcon icon={historyIcon} label={'History'} />
-                <MyFooter whenPressed={()=>{router.push('notification')}} renderIcon icon={alertIcon} label={'Alerts'} />
-                <MyFooter whenPressed={()=>{router.push('profile-settings1')}} renderIcon icon={profileIcon} label={'Profile'} />
+                <MyFooter source={require('../assets/images/home1.png')} label={'Home'} />
+                <MyFooter source={require('../assets/images/calculator1.png')} label={'Calculate'} />
+                <MyFooter source={require('../assets/images/history2.png')} label={'History'} />
+                <MyFooter whenPressed={()=>{router.push('notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
+                <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
 
         </View>
 
@@ -247,6 +308,16 @@ const mystyles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 16,
     marginVertical: 8,
+  },
+
+  style6:{
+    backgroundColor: '#f76d1b',
+    marginVertical: 8,
+    borderRadius: 10,
+    paddingVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
   },
 
   footerStyle:{

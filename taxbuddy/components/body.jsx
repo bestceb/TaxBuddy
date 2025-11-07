@@ -1,5 +1,9 @@
 import { Text, View, StyleSheet, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Picker } from '@react-native-picker/picker';
+import { Dropdown } from 'react-native-element-dropdown'
+
+import { useState } from "react";
 
 
 import Feather from '@expo/vector-icons/Feather';
@@ -9,12 +13,48 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 
 
+const data = [
+  {label: 'January', selectedMonth: '1'},
+  {label: 'February', selectedMonth: '2'},
+  {label: 'March', selectedMonth: '3'},
+  {label: 'April', selectedMonth: '4'},
+  {label: 'May', selectedMonth: '5'},
+  {label: 'June', selectedMonth: '6'},
+  {label: 'July', selectedMonth: '7'},
+  {label: 'August', selectedMonth: '8'},
+  {label: 'September', selectedMonth: '9'},
+  {label: 'October', selectedMonth: '10'},
+  {label: 'November', selectedMonth: '11'},
+  {label: 'December', selectedMonth: '12'},
+]
+
+const data2 = [
+  {label: '2025', selectedYear: '1'},
+  {label: '2024', selectedYear: '2'},
+  {label: '2023', selectedYear: '3'},
+  {label: '2022', selectedYear: '4'},
+  {label: '2021', selectedYear: '5'},
+  {label: '2020', selectedYear: '6'},
+  {label: '2019', selectedYear: '7'},
+  {label: '2018', selectedYear: '8'},
+  {label: '2017', selectedYear: '9'},
+  {label: '2016', selectedYear: '10'},
+  {label: '2015', selectedYear: '11'},
+  {label: '2014', selectedYear: '12'},
+]
+
+
+
 const HistoryBoby = ({whenPressed, value1, value2, value3, value4, myMonth, myYear, whenPressed2, }) =>{
 
   const arrowLeftIcon = <Feather name="arrow-left" size={24} color={'#000'} />
-  const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#ffffff'} />
+  const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#F9FAFB'} right={120} />
   const nairaIcon = <FontAwesome6 name="naira-sign" size={20} color={'#0000ff'} letterSpacing={-.2} />
 
+
+    const [selectedMonth, setSelectedMonth] = useState(null);
+    const [selectedYear, setSelectedYear] = useState(2025);
+  
 
 
     return(
@@ -45,21 +85,37 @@ const HistoryBoby = ({whenPressed, value1, value2, value3, value4, myMonth, myYe
                 </View>
 
 
-
-                <View style={mystyles.style6}>
-                        <TouchableOpacity style={mystyles.style6Sub} >
-                              <Text style={mystyles.style6Text} >{myMonth}</Text>
-                              {arrowDropDownIcon}
-                        </TouchableOpacity>
+{/* 
+                <View>
+                    <Dropdown
+                                data={data}
+                                labelField={'label'}
+                                placeholder="Month"
+                                placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                selectedMonth={'label'}
+                                onChange={item => setSelectedMonth(item.selectedMonth)}
+                                style={mystyles.style6}
+                                renderRightIcon={() =>(arrowDropDownIcon)}
+                                selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                
+                    />
                 </View>
 
-                <View style={mystyles.style6}>
-                        <TouchableOpacity style={mystyles.style6Sub} >
-                              <Text style={mystyles.style6Text} >{myYear}</Text>
-                              {arrowDropDownIcon}
-                        </TouchableOpacity>
+                <View>
+                    <Dropdown
+                                  data={data2}
+                                  labelField={'label'}
+                                  placeholder="Month"
+                                  placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                  selectedMonth={'label'}
+                                  onChange={item => setSelectedYear(item.selectedYear)}
+                                  style={mystyles.style6}
+                                  renderRightIcon={() =>(arrowDropDownIcon)}
+                                  selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                  
+                    />
                 </View>
-                      
+                       */}
 
 
                 
@@ -202,13 +258,12 @@ const mystyles = StyleSheet.create({
     marginVertical: 8,
     borderRadius: 10,
     paddingVertical: 10,
-  },
-
-  style6Sub:{
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
+
+ 
 
   style6Text:{
     fontSize: 14,

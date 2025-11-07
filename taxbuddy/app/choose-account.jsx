@@ -14,14 +14,14 @@ const ChooseAccount = () =>{
             <Text style={mystyles.style1} >Choose Your Account Type</Text>
             <Text style={mystyles.style2}>Select whether you're managing personl taxes or tracking your business finances.</Text>
 
-            <TouchableOpacity style={mystyles.style3} onPress={()=>{router.push('sign-in')}} >
+            <TouchableOpacity style={mystyles.style3} onPress={()=>{router.push('history')}} >
                         <Image style={mystyles.style4} source={require('../assets/images/frame4.png')} />
                         <Text style={mystyles.style5} >Individual</Text>
                         <Text style={mystyles.style6}>Track personal income tax and stay compliant with FIRS regulations</Text>
             </TouchableOpacity>
 
 
-            <TouchableOpacity style={mystyles.style7} onPress={()=>{router.push('history')}}>
+            <TouchableOpacity style={mystyles.style7} onPress={()=>{router.push('B-history')}}>
                         <Image style={mystyles.style4} source={require('../assets/images/business-card.png')} />
                         <Text style={mystyles.style5} >Business</Text>
                         <Text style={mystyles.style6}>Manage company income tax and track business tax obligation</Text>

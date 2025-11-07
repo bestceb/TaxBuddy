@@ -17,7 +17,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
-const notification = () =>{
+const bNotification = () =>{
 
 
 
@@ -62,7 +62,7 @@ const notification = () =>{
                     </View>
                     
                         {/* Temporal */}
-                    <TouchableOpacity onPress={()=>{router.push('notification2')}} style={{backgroundColor: 'blue', width: 40, height: 40, borderRadius: 20, position: 'absolute', top: 100, alignSelf: 'center'}}>
+                    <TouchableOpacity onPress={()=>{router.push('b-notification2')}} style={{backgroundColor: 'blue', width: 40, height: 40, borderRadius: 20, position: 'absolute', top: 100, alignSelf: 'center'}}>
                             <Text style={{alignSelf: 'center', color: 'white', fontWeight: 900, fontSize: 18}}>B</Text>
                     </TouchableOpacity>
 
@@ -76,9 +76,9 @@ const notification = () =>{
                     <View style={mystyles.footerStyle}>
                         <MyFooter source={require('../../assets/images/home1.png')} label={'Home'} />
                         <MyFooter source={require('../../assets/images/calculator1.png')} label={'Calculate'} />
-                        <MyFooter whenPressed={()=>{router.push('history')}} source={require('../../assets/images/history1.png')} label={'History'} />
+                        <MyFooter whenPressed={()=>{router.push('B-history')}} source={require('../../assets/images/history1.png')} label={'History'} />
                         <MyFooter source={require('../../assets/images/alert2.png')} label={'Alerts'} />
-                        <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../../assets/images/profile1.png')} label={'Profile'} />
+                        <MyFooter whenPressed={()=>{router.push('b-profile-settings1')}} source={require('../../assets/images/profile1.png')} label={'Profile'} />
 
                     </View>
 
@@ -132,4 +132,4 @@ const mystyles = StyleSheet.create({
 
 
 
-export default notification;
+export default bNotification;

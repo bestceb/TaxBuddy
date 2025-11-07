@@ -1,18 +1,22 @@
 
 
-import { TouchableOpacity, View, Text } from "react-native";
+import { TouchableOpacity, View, Text, Image } from "react-native";
 
 
 
-const MyFooter = ({label, icon, whenPressed, renderIcon, style}) =>{
+const MyFooter = ({label, icon, whenPressed, renderIcon, style, source}) =>{
 
     return (
 
         <View>
 
-                <TouchableOpacity style={{alignItems: 'center'}} onPress={whenPressed} >
+                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={whenPressed} >
                        
-                        { renderIcon ? icon : null }
+                        <Image
+                            style={{width: 24, height: 24}}
+                            source={source}
+                        />
+                        {renderIcon ? icon : null}
                         <Text style={style} >{label}</Text>
 
                 </TouchableOpacity>

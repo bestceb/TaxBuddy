@@ -58,7 +58,7 @@ const data2 = [
 
 
 
-export default function Index() {
+export default function BHistory() {
 
 
     const [selectedMonth, setSelectedMonth] = useState(null);
@@ -184,7 +184,7 @@ let year = 2025;
                           <Text style={mystyles.style1Text}>Enter your income and tap calculate to view your tax breakdown</Text>
                           
                           <MyButton2
-                                  whenPressed={() =>{router.push('history-unpaid')}} 
+                                  whenPressed={() =>{router.push('B-history-unpaid')}} 
                                   label={'Calculate Your First Tax'}
                           />
                     </View>
@@ -199,8 +199,8 @@ let year = 2025;
                 <MyFooter source={require('../assets/images/home1.png')} label={'Home'} />
                 <MyFooter source={require('../assets/images/calculator1.png')} label={'Calculate'} />
                 <MyFooter source={require('../assets/images/history2.png')} label={'History'} />
-                <MyFooter whenPressed={()=>{router.push('notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
-                <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
+                <MyFooter whenPressed={()=>{router.push('b-notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
+                <MyFooter whenPressed={()=>{router.push('b-profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
 
         </View>
 
