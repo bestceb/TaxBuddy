@@ -70,8 +70,8 @@ const bProfileSettings2 = () =>{
 
 
             <View style={mystyles.footerStyle}>
-                            <MyFooter source={require('../../assets/images/home1.png')} label={'Home'} />
-                            <MyFooter source={require('../../assets/images/calculator1.png')} label={'Calculate'} />
+                            <MyFooter whenPressed={()=>{router.push('home-b')}} source={require('../../assets/images/home1.png')} label={'Home'} />
+                            <MyFooter whenPressed={()=>{router.push('calculate-b')}} source={require('../../assets/images/calculator1.png')} label={'Calculate'} />
                             <MyFooter whenPressed={()=>{router.push('B-history')}} source={require('../../assets/images/history1.png')} label={'History'} />
                             <MyFooter whenPressed={()=>{router.push('b-notification')}} source={require('../../assets/images/alert1.png')} label={'Alerts'} />
                             <MyFooter whenPressed={()=>{}} source={require('../../assets/images/profile2.png')} label={'Profile'} />
@@ -192,6 +192,8 @@ const mystyles = StyleSheet.create({
         paddingVertical: 10,
         justifyContent: 'space-between',
         alignItems: 'center',
+        borderTopWidth: 1,
+        borderTopColor: '#E5E7EB',
         backgroundColor: '#ffffff'
     }
 

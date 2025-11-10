@@ -10,14 +10,14 @@ const MyFooter = ({label, icon, whenPressed, renderIcon, style, source}) =>{
 
         <View>
 
-                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={whenPressed} >
+                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center', top: 1, paddingHorizontal: 8, paddingBottom: 8}} onPress={whenPressed} >
                        
                         <Image
-                            style={{width: 24, height: 24}}
+                            style={{width: 24, height: 24, marginBottom: 4}}
                             source={source}
                         />
                         {renderIcon ? icon : null}
-                        <Text style={style} >{label}</Text>
+                        <Text style={{color: '#212121BF'}} >{label}</Text>
 
                 </TouchableOpacity>
 

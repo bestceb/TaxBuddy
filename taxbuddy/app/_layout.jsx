@@ -29,6 +29,9 @@ if(showSplash){
           <Stack.Screen name="onboarding3"/>
           <Stack.Screen name="choose-account"/>
           <Stack.Screen name="(auth)"/>
+          <Stack.Screen name="(authb)"/>
+          <Stack.Screen name="home"/>
+          <Stack.Screen name="(calculate)"/>
           <Stack.Screen name="history"/>
           <Stack.Screen name="history-unpaid"/>
           <Stack.Screen name="history-mark-paid"/>

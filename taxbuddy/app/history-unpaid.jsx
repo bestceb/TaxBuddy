@@ -209,8 +209,8 @@ let year = 2025;
 
 
         <View style={mystyles.footerStyle}>
-                        <MyFooter source={require('../assets/images/home1.png')} label={'Home'} />
-                        <MyFooter source={require('../assets/images/calculator1.png')} label={'Calculate'} />
+                        <MyFooter whenPressed={()=>{router.push('home')}} source={require('../assets/images/home1.png')} label={'Home'} />
+                        <MyFooter whenPressed={()=>{router.push('calculate')}} source={require('../assets/images/calculator1.png')} label={'Calculate'} />
                         <MyFooter source={require('../assets/images/history2.png')} label={'History'} />
                         <MyFooter whenPressed={()=>{router.push('notification')}} source={require('../assets/images/alert1.png')} label={'Alerts'} />
                         <MyFooter whenPressed={()=>{router.push('profile-settings1')}} source={require('../assets/images/profile1.png')}  label={'Profile'} />
@@ -229,6 +229,7 @@ const mystyles = StyleSheet.create({
 
   container:{
     flex: 1,
+    backgroundColor: "#E8F3E5"
   },
 
   container2:{
@@ -311,6 +312,8 @@ const mystyles = StyleSheet.create({
     paddingVertical: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
+    borderTopWidth: 1,
+    borderTopColor: '#E5E7EB',
     backgroundColor: '#ffffff'
   }
 

@@ -14,14 +14,14 @@ const ChooseAccount = () =>{
             <Text style={mystyles.style1} >Choose Your Account Type</Text>
             <Text style={mystyles.style2}>Select whether you're managing personl taxes or tracking your business finances.</Text>
 
-            <TouchableOpacity style={mystyles.style3} onPress={()=>{router.push('history')}} >
+            <TouchableOpacity style={mystyles.style3} onPress={()=>{router.push('sign-in')}} >
                         <Image style={mystyles.style4} source={require('../assets/images/frame4.png')} />
                         <Text style={mystyles.style5} >Individual</Text>
                         <Text style={mystyles.style6}>Track personal income tax and stay compliant with FIRS regulations</Text>
             </TouchableOpacity>
 
 
-            <TouchableOpacity style={mystyles.style7} onPress={()=>{router.push('B-history')}}>
+            <TouchableOpacity style={mystyles.style7} onPress={()=>{router.push('sign-in-business')}}>
                         <Image style={mystyles.style4} source={require('../assets/images/business-card.png')} />
                         <Text style={mystyles.style5} >Business</Text>
                         <Text style={mystyles.style6}>Manage company income tax and track business tax obligation</Text>
@@ -51,9 +51,11 @@ const mystyles = StyleSheet.create({
     },
 
     style2:{
-        fontSize: 18,
+        width: 299,
+        fontSize: 16,
         textAlign: 'center',
         lineHeight: 24,
+        color: '#212121BF'
         //marginHorizontal: 35,
     },
 
@@ -76,13 +78,14 @@ const mystyles = StyleSheet.create({
         paddingBottom: 16,
         fontWeight: 500,
         fontSize: 24,
+        color: '#212121'
     },
 
     style6:{
         marginBottom: 16,
         textAlign: 'center',
         fontSize: 16,
-        color: '#212121',
+        color: '#212121BF',
         lineHeight: 24,
         paddingHorizontal: 25
     },
