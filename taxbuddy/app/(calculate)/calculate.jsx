@@ -135,6 +135,7 @@ const TaxCalculatorScreen = () => {
             style={styles.input}
             keyboardType="numeric"
             placeholder="Enter amount"
+            placeholderTextColor={'#6b6969bf'}
             value={revenue}
             onChangeText={setRevenue}
           />

@@ -7,6 +7,8 @@ export default function AuthLayout (){
 
             <Stack.Screen name="sign-in"/>
             <Stack.Screen name="signUp-individual"/>
+            <Stack.Screen name="forgotPasword"/>
+            <Stack.Screen name="pass-emailVerif"/>
 
 
         </Stack>

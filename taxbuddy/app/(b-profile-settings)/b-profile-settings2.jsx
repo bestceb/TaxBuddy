@@ -47,6 +47,8 @@ const bProfileSettings2 = () =>{
                                 <TextInput
                                     style={mystyles.textInput}
                                     placeholder="your.email@example.com"
+                                    placeholderTextColor={'#6b6969bf'}
+
                                 />
                             </View>
 

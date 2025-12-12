@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, TextInput, TouchableOpacity,  } fro
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { useState } from "react";
-
+import { Dropdown } from 'react-native-element-dropdown';
 
 
 import MainHeader from "../../components/mainHeader";
@@ -22,10 +22,30 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
 
-const profileSettings1 = () =>{
+
+const data = [
+  {label: 'Sole proprietorship', selectedBusiness: '1'},
+  {label: 'Partnership', selectedBusiness: '2'},
+  {label: 'Limited liability company (LLC)', selectedBusiness: '3'},
+  {label: 'Corporation', selectedBusiness: '4'},
+  {label: 'Franchise', selectedBusiness: '5'},
+  {label: 'Cooporative', selectedBusiness: '6'},
+  {label: 'Nonprofit corporation', selectedBusiness: '7'},
+]
 
 
-      const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#ffffff'} />
+const data2 = [
+  {label: '$20,000', selectedRange: '1'},
+  {label: '$20,000 - $50,000', selectedRange: '2'},
+  {label: '$50,000 - $100,000', selectedRange: '3'},
+  {label: '$100,000', selectedRange: '4'},
+]
+
+
+const ProfileSettings1 = () =>{
+
+
+      const arrowDropDownIcon = <MaterialIcons name="arrow-drop-down" size={24} color={'#F9FAFB'} right={40} />
       const toggleOffIcon = <MaterialIcons name="toggle-off" size={40} color={'#21212140'} />
       const toggleOnIcon = <MaterialIcons name="toggle-on" size={40} color={'#367E34'} />
 
@@ -42,6 +62,11 @@ const profileSettings1 = () =>{
 
     
     const [isToggled, setIsToggled] = useState(false);
+    const [selectedBusiness, setSelectedBusiness] = useState(null);
+    const [selectedRange, setSelectedRange] = useState(null);
+
+
+
 
     const handleToggle = () =>{
         setIsToggled(!isToggled)
@@ -73,22 +98,58 @@ const profileSettings1 = () =>{
                     </View>
 
                     <View>
-                            <Text style={mystyles.text2}>Full Name</Text>
+                            <Text style={mystyles.text2}>Business Name</Text>
                             <Text style={mystyles.text3}>Samuel James</Text>
 
                     </View>
 
-                    <MyButton4
-                        label={'Select Range'}
-                        whenPressed={()=>{}}
-                        renderIcon icon={arrowDropDownIcon}
-                    />
+                    <View>
+                        <Dropdown
+                                    style={mystyles.dropStyle}
+                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    data={data}
+                                    labelField="label"
+                                    valueField="selectedBusiness"
+                                    value={selectedBusiness}
+                                    onChange={item => {setSelectedBusiness(item.selectedBusiness)}}
+                                    placeholder="Business Type"
+                                    mode="auto"
+                                    renderRightIcon={() =>(arrowDropDownIcon)}
+                                    containerStyle={{borderRadius: 8, backgroundColor: "#ccc", marginBottom: 40, width: 260, marginLeft: 20 }}
+                                    itemTextStyle={{borderStartWidth: 10, borderRadius: 10, paddingHorizontal: 10, borderColor: "#505752ff", fontSize: 16}}
+                                    
+                        />
+                    </View>
+                    
+                    <View>
+                        <Dropdown
+                                    style={mystyles.dropStyle}
+                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                    data={data2}
+                                    labelField="label"
+                                    valueField="selectedRange"
+                                    value={selectedRange}
+                                    onChange={item => {setSelectedRange(item.selectedRange)}}
+                                    placeholder="Select Range"
+                                    mode="auto"
+                                    renderRightIcon={() =>(arrowDropDownIcon)}
+                                    containerStyle={{borderRadius: 8, backgroundColor: "#ccc", marginBottom: 40, width: 260, marginLeft: 20 }}
+                                    itemTextStyle={{ paddingHorizontal: 10, borderColor: "#505752ff", fontSize: 16}}
+                                    
+                        />
+                    </View>
+
+                    
 
                     <View>
                             <Text style={mystyles.text2}>Tax Identification Number</Text>
                             <TextInput 
                                 style={mystyles.text3}
                                 placeholder="Enter your TIN" 
+                                placeholderTextColor={'#6b6969bf'}
+
                             />
 
                     </View>
@@ -175,7 +236,7 @@ const mystyles = StyleSheet.create({
         borderRadius: 20,
         paddingHorizontal: 16,
         paddingVertical: 32,
-        height: 531,
+        height: 642,
         gap: 32,
         marginTop: 40,
         marginBottom: 48,
@@ -201,7 +262,19 @@ const mystyles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 16,
         marginBottom: 4,
+        color: '#212121BF'
+
     },
+
+    dropStyle:{
+    backgroundColor: '#f76d1b',
+    marginVertical: 8,
+    borderRadius: 10,
+    paddingVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  },
 
     text4:{
         color: '#F76D1B'
@@ -332,4 +405,4 @@ const mystyles = StyleSheet.create({
 
 
 
-export default profileSettings1;
+export default ProfileSettings1;

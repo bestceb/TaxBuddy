@@ -120,33 +120,41 @@ let year = 2025;
                     />
 
                     <View>
-                                        <Dropdown
-                                                    data={data}
-                                                    labelField={'label'}
-                                                    placeholder="Month"
-                                                    placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                    selectedMonth={'label'}
-                                                    onChange={item => setSelectedMonth(item.selectedMonth)}
-                                                    style={mystyles.style6}
-                                                    renderRightIcon={() =>(arrowDropDownIcon)}
-                                                    selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                    
-                                        />
-                                    </View>
-                    
-                                    <View>
-                                        <Dropdown
-                                                      data={data2}
-                                                      labelField={'label'}
-                                                      placeholder="Month"
-                                                      placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                      selectedMonth={'label'}
-                                                      onChange={item => setSelectedYear(item.selectedYear)}
-                                                      style={mystyles.style6}
-                                                      renderRightIcon={() =>(arrowDropDownIcon)}
-                                                      selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
-                                                      
-                                        />
+                                       <Dropdown
+                                                style={mystyles.style6}
+                                                placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                data={data}
+                                                labelField="label"
+                                                valueField="selectedMonth"
+                                                value={selectedMonth}
+                                                onChange={item => {setSelectedMonth(item.selectedMonth)}}
+                                                placeholder="Month"
+                                                mode="auto"
+                                                renderRightIcon={() =>(arrowDropDownIcon)}
+                                                containerStyle={{borderRadius: 8, backgroundColor: "#ccc", marginBottom: 40, width: 200, marginLeft: 65 }}
+                                                itemTextStyle={{borderStartWidth: 10, borderRadius: 10, paddingHorizontal: 10, borderColor: "#505752ff", fontSize: 16}}
+                                                
+                                      />
+                                  </View>
+                  
+                                  <View>
+                                      <Dropdown
+                                                style={mystyles.style6}
+                                                placeholderStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                selectedTextStyle={{textAlign: 'center', color: '#F9FAFB'}}
+                                                data={data2}
+                                                labelField="label"
+                                                valueField="selectedYear"
+                                                value={selectedYear}
+                                                onChange={item => {setSelectedYear(item.selectedYear)}}
+                                                placeholder="Year"
+                                                mode="auto"
+                                                renderRightIcon={() =>(arrowDropDownIcon)}
+                                                containerStyle={{borderRadius: 8, backgroundColor: "#ccc", marginBottom: 40, width: 200, marginLeft: 65 }}
+                                                itemTextStyle={{borderStartWidth: 10, borderRadius: 10, paddingHorizontal: 10, borderColor: "#505752ff", fontSize: 16}}
+                                                
+                                      />
                                     </View>
 
 

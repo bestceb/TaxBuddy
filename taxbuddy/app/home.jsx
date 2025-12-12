@@ -23,7 +23,7 @@ import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 
-export default function TaxDashboard() {
+export default function Index() {
   const [month, setMonth] = useState('Month');
   const [year, setYear] = useState('2026');
 
@@ -104,25 +104,25 @@ export default function TaxDashboard() {
         <View style={styles.summaryCard}>
             <Image style={styles.iconContainer} source={require('../assets/images/total.png')} />
             <Text style={styles.summaryLabel}>Total Income</Text>
-            <Text style={styles.summaryValue}>N0</Text>
+            <Text style={styles.summaryValue}>₦0</Text>
         </View>
 
         <View style={styles.summaryCard}>
           <Image style={styles.iconContainer} source={require('../assets/images/payable.png')} />
           <Text style={styles.summaryLabel}>Tax Payable</Text>
-          <Text style={styles.summaryValue}>N0</Text>
+          <Text style={styles.summaryValue}>₦0</Text>
         </View>
 
         <View style={styles.summaryCard}>
           <Image style={styles.iconContainer} source={require('../assets/images/unpaid.png')} />
           <Text style={styles.summaryLabel}>Unpaid</Text>
-          <Text style={styles.summaryValue}>N0</Text>
+          <Text style={styles.summaryValue}>₦0</Text>
         </View>
 
         <View style={styles.summaryCard}>
           <Image style={styles.iconContainer} source={require('../assets/images/paid.png')} />
           <Text style={styles.summaryLabel}>Paid</Text>
-          <Text style={styles.summaryValue}>N0</Text>
+          <Text style={styles.summaryValue}>₦0</Text>
         </View>
       </ScrollView>
 

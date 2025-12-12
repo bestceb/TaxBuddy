@@ -24,7 +24,7 @@ if(showSplash){
   return(
     <Stack screenOptions={{headerShown: false}} >
 
-          <Stack.Screen name="onboarding1"/>
+          <Stack.Screen name="index"/>
           <Stack.Screen name="onboarding2"/>
           <Stack.Screen name="onboarding3"/>
           <Stack.Screen name="choose-account"/>
@@ -32,6 +32,7 @@ if(showSplash){
           <Stack.Screen name="(authb)"/>
           <Stack.Screen name="home"/>
           <Stack.Screen name="(calculate)"/>
+          <Stack.Screen name="calculate-b"/>
           <Stack.Screen name="history"/>
           <Stack.Screen name="history-unpaid"/>
           <Stack.Screen name="history-mark-paid"/>

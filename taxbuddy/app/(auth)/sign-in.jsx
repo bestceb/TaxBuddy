@@ -75,6 +75,7 @@ export default function SignIn({ navigation }) {
                                 onChangeText={(t) => setEmail(t)}
                                 placeholder="you@example.com"
                                 keyboardType="email-address"
+                                placeholderTextColor={'#6b6969bf'}
                                 autoCapitalize="none"
                                 autoCorrect={false}
                                 returnKeyType="next"
@@ -94,6 +95,7 @@ export default function SignIn({ navigation }) {
                                 value={password}
                                 onChangeText={(t) => setPassword(t)}
                                 placeholder="••••••••"
+                                placeholderTextColor={'#6b6969bf'}
                                 secureTextEntry={secure}
                                 returnKeyType="done"
                                 onSubmitEditing={handleSignIn}
@@ -125,7 +127,7 @@ export default function SignIn({ navigation }) {
                                 style={styles.forgot}
                                 onPress={() => {
                                 // navigation.navigate("ForgotPassword")
-                                Alert.alert("Forgot password", "Password reset flow goes here");
+                                router.push('./forgotPassword')
                                 }}
                             >
                                 <Text style={[styles.forgotText, { color: "#F76D1B", marginTop: -6 }]}>Forgot password?</Text>

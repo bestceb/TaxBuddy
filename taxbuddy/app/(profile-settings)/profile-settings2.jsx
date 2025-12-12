@@ -71,6 +71,8 @@ const profileSettings2 = () =>{
                                 <TextInput
                                     style={mystyles.textInput}
                                     placeholder="your.email@example.com"
+                                    placeholderTextColor={'#6b6969bf'}
+
                                 />
                             </View>
 
@@ -167,6 +169,7 @@ const mystyles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 16,
         marginBottom: 32,
+        color: '#212121bf'
     },
 
     style5:{

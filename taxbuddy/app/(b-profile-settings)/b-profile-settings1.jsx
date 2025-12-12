@@ -112,7 +112,6 @@ const bProfileSettings1 = () =>{
                     <MyButton4
                         label={'Select Range'}
                         whenPressed={()=>{}}
-                        renderIcon icon={arrowDropDownIcon}
                     />
 
                     <View>
@@ -120,6 +119,7 @@ const bProfileSettings1 = () =>{
                             <TextInput 
                                 style={mystyles.text3}
                                 placeholder="Enter your TIN" 
+                                placeholderTextColor={'#6b6969bf'}
                             />
 
                     </View>
@@ -232,6 +232,7 @@ const mystyles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 16,
         marginBottom: 4,
+        color: '#212121BF'
     },
 
     dropStyle:{

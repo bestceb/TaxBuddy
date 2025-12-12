@@ -6,7 +6,6 @@ export default function BNotificationLayout (){
         <Stack screenOptions={{headerShown: false}}>
 
             <Stack.Screen name="calculate"/>
-            <Stack.Screen name="calculate-completed"/>
 
         </Stack>
     )

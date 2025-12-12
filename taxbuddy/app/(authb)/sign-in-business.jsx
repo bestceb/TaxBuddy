@@ -78,6 +78,7 @@ export default function SignInBusiness({ navigation }) {
                                 value={email}
                                 onChangeText={(t) => setEmail(t)}
                                 placeholder="you@example.com"
+                                placeholderTextColor={'#6b6969bf'}
                                 keyboardType="email-address"
                                 autoCapitalize="none"
                                 autoCorrect={false}
@@ -98,6 +99,7 @@ export default function SignInBusiness({ navigation }) {
                                 value={password}
                                 onChangeText={(t) => setPassword(t)}
                                 placeholder="••••••••"
+                                placeholderTextColor={'#6b6969bf'}
                                 secureTextEntry={secure}
                                 returnKeyType="done"
                                 onSubmitEditing={handleSignIn}

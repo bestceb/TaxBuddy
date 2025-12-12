@@ -15,7 +15,7 @@ import {
   View,
 } from "react-native";
 
-export default function SignUpBusiness({ navigation }) {
+export default function SignUpBusiness({ navigation }) { 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [incomeRange, setIncomeRange] = useState("");
@@ -103,6 +103,7 @@ export default function SignUpBusiness({ navigation }) {
                         value={name}
                         onChangeText={setName}
                         placeholder="Jane Doe"
+                        placeholderTextColor={'#6b6969bf'}
                         returnKeyType="next"
                         onSubmitEditing={() => emailRef.current?.focus()}
                         style={[styles.input, errors.name && styles.inputError]}
@@ -116,6 +117,7 @@ export default function SignUpBusiness({ navigation }) {
                         value={email}
                         onChangeText={setEmail}
                         placeholder="you@example.com"
+                        placeholderTextColor={'#6b6969bf'}
                         keyboardType="email-address"
                         autoCapitalize="none"
                         returnKeyType="next"
@@ -167,6 +169,7 @@ export default function SignUpBusiness({ navigation }) {
                         value={taxId}
                         onChangeText={setTaxId}
                         placeholder="123-45-6789"
+                        placeholderTextColor={'#6b6969bf'}
                         keyboardType="default"
                         returnKeyType="next"
                         onSubmitEditing={() => passRef.current?.focus()}
@@ -181,6 +184,7 @@ export default function SignUpBusiness({ navigation }) {
                           value={password}
                           onChangeText={setPassword}
                           placeholder="••••••••"
+                          placeholderTextColor={'#6b6969bf'}
                           secureTextEntry={secure}
                           returnKeyType="next"
                           onSubmitEditing={() => confirmRef.current?.focus()}
@@ -213,6 +217,7 @@ export default function SignUpBusiness({ navigation }) {
                         value={confirm}
                         onChangeText={setConfirm}
                         placeholder="••••••••"
+                        placeholderTextColor={'#6b6969bf'}
                         secureTextEntry={secure}
                         returnKeyType="done"
                         onSubmitEditing={handleSignUp}

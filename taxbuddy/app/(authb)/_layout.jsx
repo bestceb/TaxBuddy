@@ -6,7 +6,7 @@ export default function AuthLayoutB (){
         <Stack screenOptions={{headerShown: false}}>
 
             <Stack.Screen name="sign-in-business"/>
-            <Stack.Screen name="sign-up-individual"/>
+            <Stack.Screen name="sign-up-business"/>
 
 
         </Stack>
