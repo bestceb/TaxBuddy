@@ -77,7 +77,7 @@ export default function SignInBusiness({ navigation }) {
                             <TextInput
                                 value={email}
                                 onChangeText={(t) => setEmail(t)}
-                                placeholder="you@example.com"
+                                placeholder="business@email.com"
                                 placeholderTextColor={'#6b6969bf'}
                                 keyboardType="email-address"
                                 autoCapitalize="none"
@@ -131,7 +131,7 @@ export default function SignInBusiness({ navigation }) {
                                 style={styles.forgot}
                                 onPress={() => {
                                 // navigation.navigate("ForgotPassword")
-                                Alert.alert("Forgot password", "Password reset flow goes here");
+                                  router.push('./forgotPassword-business')
                                 }}
                             >
                                 <Text style={[styles.forgotText, { color: "#F76D1B", marginTop: -6 }]}>Forgot password?</Text>

@@ -73,7 +73,7 @@ export default function SignIn({ navigation }) {
                             <TextInput
                                 value={email}
                                 onChangeText={(t) => setEmail(t)}
-                                placeholder="you@example.com"
+                                placeholder="you@email.com"
                                 keyboardType="email-address"
                                 placeholderTextColor={'#6b6969bf'}
                                 autoCapitalize="none"

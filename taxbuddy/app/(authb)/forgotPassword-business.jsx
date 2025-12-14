@@ -10,7 +10,7 @@ import { router } from "expo-router";
 const {width, height} = Dimensions.get('screen');
 
 
-export default function ForgotPassword({ navigation }) {
+export default function ForgotPasswordBusines({ navigation }) {
   
 
   return (
@@ -22,7 +22,7 @@ export default function ForgotPassword({ navigation }) {
                 
                 <View style={myStyles.backContainer}>
                     
-                    <TouchableOpacity onPress={()=>{ router.back('./sign-in')}}>
+                    <TouchableOpacity onPress={()=>{ router.back('./sign-in-business')}}>
                             <Image style={myStyles.image2} source={require('../../assets/images/back.png')}/>
                     </TouchableOpacity>
                     <Text style={myStyles.text1}>Forgot Password</Text>
@@ -43,7 +43,7 @@ export default function ForgotPassword({ navigation }) {
                     <TextInput
                             //value={email}
                             //onChangeText={(t) => setEmail(t)}
-                            placeholder="you@email.com"
+                            placeholder="business@email.com"
                             keyboardType="email-address"
                             placeholderTextColor={'#6b6969bf'}
                             autoCapitalize="none"
@@ -60,7 +60,7 @@ export default function ForgotPassword({ navigation }) {
                         <TouchableOpacity
                             style={myStyles.button /*, loading && myStyles.buttonDisabled]*/}
 
-                            onPress={() =>{router.push('./pass-emailVerif')}}
+                            onPress={() =>{router.push('./pass-emailVerif-business')}}
                         >
                             <Text style={[myStyles.buttonText, { color: '#F9FAFB' }]}>Reset Password</Text>
                         </TouchableOpacity>

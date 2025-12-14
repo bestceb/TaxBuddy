@@ -11,7 +11,7 @@ const codeLength = 4;
 
 const {width, height} = Dimensions.get('screen');
 
-const PassEmailVerification = () =>{
+const PassEmailVerificationBusiness = () =>{
 
     const [code, setCode] = useState(Array(codeLength).fill(''));
     const [secure, setSecure] = useState(true);
@@ -52,7 +52,7 @@ const PassEmailVerification = () =>{
                 
                 <View style={myStyles.backContainer}>
                     
-                    <TouchableOpacity onPress={()=>{ router.back('./forgotPassword')}}>
+                    <TouchableOpacity onPress={()=>{ router.back('./forgotPassword-business')}}>
                             <Image style={myStyles.image2} source={require('../../assets/images/back.png')}/>
                     </TouchableOpacity>
                     <Text style={myStyles.text1}>Email Verification</Text>
@@ -109,7 +109,7 @@ const PassEmailVerification = () =>{
                 <TouchableOpacity
                     style={myStyles.button /*, loading && myStyles.buttonDisabled]*/}
 
-                    onPress={() =>{router.push('./resetPassword')}}
+                    onPress={() =>{router.push('./resetPassword-business')}}
                 >
                     <Text style={{color: '#F9FAFB' }}>Verify and Proceed</Text>
                 </TouchableOpacity>
@@ -258,4 +258,4 @@ const myStyles = StyleSheet.create({
 });
 
 
-export default PassEmailVerification;
+export default PassEmailVerificationBusiness;
