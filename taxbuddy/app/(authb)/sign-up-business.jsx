@@ -58,6 +58,7 @@ export default function SignUpBusiness({ navigation }) {
       // placeholder for real signup logic
       await new Promise((res) => setTimeout(res, 1000));
       Alert.alert("Account created", `Welcome, ${name}`);
+      router.push('./emailVerification-business');
       // optionally navigate
       // navigation.navigate('SignIn');
     } catch (e) {
@@ -102,7 +103,7 @@ export default function SignUpBusiness({ navigation }) {
                       <TextInput
                         value={name}
                         onChangeText={setName}
-                        placeholder="Jane Doe"
+                        placeholder="Beauty's Emterprise"
                         placeholderTextColor={'#6b6969bf'}
                         returnKeyType="next"
                         onSubmitEditing={() => emailRef.current?.focus()}
@@ -116,7 +117,7 @@ export default function SignUpBusiness({ navigation }) {
                         ref={emailRef}
                         value={email}
                         onChangeText={setEmail}
-                        placeholder="you@example.com"
+                        placeholder="business@email.com"
                         placeholderTextColor={'#6b6969bf'}
                         keyboardType="email-address"
                         autoCapitalize="none"
@@ -170,7 +171,7 @@ export default function SignUpBusiness({ navigation }) {
                         onChangeText={setTaxId}
                         placeholder="123-45-6789"
                         placeholderTextColor={'#6b6969bf'}
-                        keyboardType="default"
+                        keyboardType="number-pad"
                         returnKeyType="next"
                         onSubmitEditing={() => passRef.current?.focus()}
                         style={styles.input}

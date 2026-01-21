@@ -58,6 +58,7 @@ export default function SignUpIndividual({ navigation }) {
       // placeholder for real signup logic
       await new Promise((res) => setTimeout(res, 1000));
       Alert.alert("Account created", `Welcome, ${name}`);
+      router.push('./emailVerification')
       // optionally navigate
       // navigation.navigate('SignIn');
     } catch (e) {
